@@ -1,0 +1,37 @@
+!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Spring Security Example</title>
+</head>
+<body>
+<div align="center">
+  <h2>User profile</h2>
+<table border="2" cellpadding="10" >
+  <tbody>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Login</th>
+    <th scope="col">First name</th>
+    <th scope="col">Last name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Role</th>
+    <hr/>
+
+  </tr>
+  <tr>
+    <td th:text="${user.getId()}"></td>
+    <td th:text="${user.getLogin()}"></td>
+    <td th:text="${user.getFirstName()}"></td>
+    <td th:text="${user.getLastName()}"></td>
+    <td th:text="${user.getEmail()}"></td>
+    <td th:text="${user.rolesToString()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<input align="right" type = "button" value = "logout"
+       onclick = "window.location.href = '/logout'"/>
+
+</div>
+</body>
+</html>
