@@ -5,10 +5,15 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    public List<User> findAll();
-    public User findUserById(Long id);
-    public Optional findUserByLogin(String login);
-    public boolean deleteUser(Long id);
-    public boolean saveUser(User user);
-    public void updateUser(User user, Long id);
+    List<User> findAll();
+
+    User findUserById(Long id);
+
+    Optional findUserByLogin(String login);
+
+    boolean deleteUser(Long id);
+
+    boolean saveUser(User user);
+
+    void updateUser(User user, Long id);
 }

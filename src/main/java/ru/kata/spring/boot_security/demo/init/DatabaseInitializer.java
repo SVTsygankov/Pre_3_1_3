@@ -11,7 +11,6 @@ import ru.kata.spring.boot_security.demo.repository.UsersRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Component
 public class DatabaseInitializer implements ApplicationListener<ContextRefreshedEvent> {
 

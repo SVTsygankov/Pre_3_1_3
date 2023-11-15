@@ -13,6 +13,7 @@ public class RoleServiceImp implements RoleService {
     public RoleServiceImp(RolesRepository roleRepository) {
         this.rolesRepository = roleRepository;
     }
+
     @Override
     public List<Role> findAll() {
         return rolesRepository.findAll();

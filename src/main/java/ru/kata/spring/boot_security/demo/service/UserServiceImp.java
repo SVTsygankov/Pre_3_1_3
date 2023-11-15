@@ -17,6 +17,7 @@ public class UserServiceImp implements UserService, UserDetailsService {
 
     private final UsersRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+
     public UserServiceImp(UsersRepository userRepository, @Lazy PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
@@ -55,7 +56,7 @@ public class UserServiceImp implements UserService, UserDetailsService {
         return userRepository.findByLogin(login);
     }
 
-   public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByLogin(login);
         if (user.isEmpty()) throw new UsernameNotFoundException("Пользователя с login = " + login + " не найден");
         return  user.get();
