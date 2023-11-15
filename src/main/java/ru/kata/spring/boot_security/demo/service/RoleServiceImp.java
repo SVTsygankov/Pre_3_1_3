@@ -5,7 +5,6 @@ import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.repository.RolesRepository;
 import java.util.List;
 
-
 @Service
 public class RoleServiceImp implements RoleService {
 

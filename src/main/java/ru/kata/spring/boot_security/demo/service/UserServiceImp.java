@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.repository.UsersRepository;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 public class UserServiceImp implements UserService, UserDetailsService {
@@ -54,10 +52,7 @@ public class UserServiceImp implements UserService, UserDetailsService {
 
     @Override
     public Optional<User> findUserByLogin(String login) {
-//        if (userRepository.findByLogin(login).isEmpty())
-//            throw new UsernameNotFoundException("Пользователя с login = " + login + "не существует");
         return userRepository.findByLogin(login);
-//                .get();
     }
 
    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {

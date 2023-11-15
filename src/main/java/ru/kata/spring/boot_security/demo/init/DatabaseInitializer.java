@@ -8,12 +8,11 @@ import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.repository.RolesRepository;
 import ru.kata.spring.boot_security.demo.repository.UsersRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
-//@Component
+@Component
 public class DatabaseInitializer implements ApplicationListener<ContextRefreshedEvent> {
 
     private final RolesRepository roleRepository;
