@@ -1,5 +1,8 @@
 package ru.kata.spring.boot_security.demo.model;
 
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,13 +42,16 @@ public class User implements UserDetails {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
+    @Fetch(FetchMode.JOIN)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private List<Role> roles = new ArrayList<>();
+
+
     public User() {}
 
     public User(String login, String password, String firstName, String lastName, String email, List<Role> roles) {
