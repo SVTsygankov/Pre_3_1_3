@@ -26,7 +26,7 @@ public class UserServiceImp implements UserService, UserDetailsService {
     @Override
     public List<User> findAll() { return userRepository.findAll(); }
 
-     @Override
+    @Override
     public User findUserById(Long id) {
         if (userRepository.findById(id).isEmpty())
             throw new UsernameNotFoundException("Пользователь с ID="+id+" не найден");
