@@ -24,7 +24,7 @@ public class UserServiceImp implements UserService, UserDetailsService {
     }
 
     @Override
-    public List<User> findAll() { return userRepository.findAll(); }
+    public List<User> findAll() { return userRepository.findAllUniqueUsers(); }
 
     @Override
     public User findUserById(Long id) {
